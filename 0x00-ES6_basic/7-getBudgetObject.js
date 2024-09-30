@@ -4,7 +4,7 @@ function getBudgetObject(income, gdp, capita) {
     gdp,
     capita,
   };
-  
+
   return budget;
 }
 
