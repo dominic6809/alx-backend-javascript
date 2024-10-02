@@ -4,7 +4,7 @@ import uploadPhoto from './5-photo-reject.js';
 /* eslint-enable import/extensions */
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  const signUpPromise = signUpUser(firstName, lastName);
+  const signUpUserPromise = signUpUser(firstName, lastName);
   const uploadPhotoPromise = uploadPhoto(fileName);
 
   return Promise.allSettled([signUpUserPromise, uploadPhotoPromise]).then((values) => {
