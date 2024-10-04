@@ -36,14 +36,14 @@ export default class HolbertonCourse {
   }
 
   // Validation methods
-  _validateName(name) {
+  static _validateName(name) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
     return name;
   }
 
-  _validateLength(length) {
+  static _validateLength(length) {
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
