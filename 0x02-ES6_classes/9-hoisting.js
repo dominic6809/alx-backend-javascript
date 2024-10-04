@@ -3,8 +3,8 @@
 
 export class HolbertonClass {
   constructor(year, location) {
-    this._year = this._validateYear(year);
-    this._location = this._validateLocation(location);
+    this._year = year;
+    this._location = location;
   }
 
   get year() {
@@ -14,29 +14,8 @@ export class HolbertonClass {
   get location() {
     return this._location;
   }
-
-  // Validation for year (must be a number)
-  _validateYear(year) {
-    if (typeof year !== 'number') {
-      throw new TypeError('Year must be a number');
-    }
-    return year;
-  }
-
-  // Validation for location (must be a string)
-  _validateLocation(location) {
-    if (typeof location !== 'string') {
-      throw new TypeError('Location must be a string');
-    }
-    return location;
-  }
 }
 
-// Instances of HolbertonClass
-const class2019 = new HolbertonClass(2019, 'San Francisco');
-const class2020 = new HolbertonClass(2020, 'San Francisco');
-
-// Define the StudentHolberton class
 export class StudentHolberton {
   constructor(firstName, lastName, holbertonClass) {
     this._firstName = firstName;
@@ -57,12 +36,13 @@ export class StudentHolberton {
   }
 }
 
-// Instances of StudentHolberton
+const class2019 = new HolbertonClass(2019, 'San Francisco');
+const class2020 = new HolbertonClass(2020, 'San Francisco');
+
 const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
 const student2 = new StudentHolberton('John', 'Doe', class2020);
 const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
 const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
-// Export the list of students
-export const listOfStudents = [student1, student2, student3, student4, student5];
+export default [student1, student2, student3, student4, student5];
