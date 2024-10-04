@@ -1,44 +1,32 @@
 export default class Currency {
   constructor(code, name) {
-    this._code = this._validateCode(code);
-    this._name = this._validateName(name);
+    this.code = code;
+    this.name = name;
   }
 
-  // Getter and Setter for code.
-  get code() {
-    return this._code;
-  }
-
-  set code(newCode) {
-    this._code = this._validateCode(newCode);
-  }
-
-  // Getter and Setter for name
-  get name() {
-    return this._name;
-  }
-
-  set name(newName) {
-    this._name = this._validateName(newName);
-  }
-
-  // Method to display the currency in "name (code)" format
   displayFullCurrency() {
     return `${this._name} (${this._code})`;
   }
 
-  // Validation methods
-  static _validateCode(code) {
-    if (typeof code !== 'string') {
-      throw new TypeError('Code must be a string');
-    }
-    return code;
+  get code() {
+    return this._code;
   }
 
-  static _validateName(name) {
-    if (typeof name !== 'string') {
+  set code(code) {
+    if ((typeof code !== 'string') && !(code instanceof String)) {
+      throw new TypeError('Code must be a string');
+    }
+    this._code = code;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(name) {
+    if ((typeof name !== 'string') && !(name instanceof String)) {
       throw new TypeError('Name must be a string');
     }
-    return name;
+    this._name = name;
   }
 }
