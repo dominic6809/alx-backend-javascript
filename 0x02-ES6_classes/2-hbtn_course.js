@@ -3,57 +3,39 @@
 
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this._validateName(name);
-    this._length = this._validateLength(length);
-    this._students = this._validateStudents(students);
+    if (typeof name !== 'string') throw new TypeError('name must be a string');
+    if (!Number.isInteger(length)) throw new TypeError('length must be a number');
+    if (!Array.isArray(students)) throw new TypeError('students type must be an Array');
+
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
-  // Getter and Setter for name
   get name() {
     return this._name;
   }
 
-  set name(newName) {
-    this._name = this._validateName(newName);
+  set name(val) {
+    if (typeof val !== 'string') throw new TypeError('name must be a string');
+    this._name = val;
   }
 
-  // Getter and Setter for length
   get length() {
     return this._length;
   }
 
-  set length(newLength) {
-    this._length = this._validateLength(newLength);
+  set length(val) {
+    if (!Number.isInteger(val)) throw new TypeError('length must be a number');
+    this._length = val;
   }
 
-  // Getter and Setter for students
   get students() {
     return this._students;
   }
 
-  set students(newStudents) {
-    this._students = this._validateStudents(newStudents);
-  }
-
-  // Validation methods
-  static _validateName(name) {
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    return name;
-  }
-
-  static _validateLength(length) {
-    if (typeof length !== 'number') {
-      throw new TypeError('Length must be a number');
-    }
-    return length;
-  }
-
-  static _validateStudents(students) {
-    if (!Array.isArray(students) || !students.every(student => typeof student === 'string')) {
-      throw new TypeError('Students must be an array of strings');
-    }
-    return students;
+  set students(val) {
+    if (!Array.isArray(val)) throw new TypeError('students type must be an Array');
+    this._students = val;
   }
 }
