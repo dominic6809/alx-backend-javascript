@@ -28,14 +28,14 @@ export default class Currency {
   }
 
   // Validation methods
-  _validateCode(code) {
+  static _validateCode(code) {
     if (typeof code !== 'string') {
       throw new TypeError('Code must be a string');
     }
     return code;
   }
 
-  _validateName(name) {
+  static _validateName(name) {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
