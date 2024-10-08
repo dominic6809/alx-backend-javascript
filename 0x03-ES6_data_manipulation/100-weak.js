@@ -1,7 +1,7 @@
 // Exporting the WeakMap instance
 export const weakMap = new WeakMap();
 
-// Exporting the queryAPI function
+// https://stackoverflow.com/questions/29413222/what-are-the-actual-uses-of-es6-weakmap
 function queryAPI(endpoint) {
   let called = 0;
   if (weakMap.get(endpoint)) called = weakMap.get(endpoint);
