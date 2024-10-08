@@ -1,5 +1,5 @@
 // Exporting the WeakMap instance
-const weakMap = new WeakMap();
+export const weakMap = new WeakMap();
 
 // Exporting the queryAPI function
 function queryAPI(endpoint) {
