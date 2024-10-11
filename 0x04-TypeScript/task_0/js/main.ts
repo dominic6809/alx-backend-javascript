@@ -1,5 +1,3 @@
-// main.ts
-
 // Defining the Student interface
 interface Student {
   firstName: string;
@@ -9,14 +7,14 @@ interface Student {
 }
 
 // Creating two students
-const student1: Student = {
-  firstName: "Dominic",
-  lastName: "Muuo",
+const studentA: Student = {
+  firstName: "John",
+  lastName: "Doe",
   age: 20,
-  location: "Kenya",
+  location: "New York",
 };
 
-const student2: Student = {
+const studentB: Student = {
   firstName: "Jane",
   lastName: "Smith",
   age: 22,
@@ -24,7 +22,7 @@ const student2: Student = {
 };
 
 // Creating an array of students
-const studentsList: Student[] = [student1, student2];
+const studentsList: Student[] = [studentA, studentB];
 
 // Creating a table
 const table = document.createElement('table');
