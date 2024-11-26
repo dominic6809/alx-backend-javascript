@@ -1,23 +1,20 @@
 #!/usr/bin/node
+/**
+ * program that:
+ * should display the message Welcome to Holberton School, what is your name? (followed by a new line)
+ * The user should be able to input their name on a new line
+ * The program should display Your name is: INPUT
+ */
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// Import the readline module to handle input/output
-const readline = require('readline');
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
 
-// Create an interface for input and output
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+  if (name) {
+    process.stdout.write(`Your name is: ${name}`);
+  }
 });
 
-// Display the initial prompt message
-console.log('Welcome to Holberton School, what is your name?');
-
-// Listen for input from the user
-rl.on('line', (input) => {
-  console.log(`Your name is: ${input}`);
-  rl.close();
-});
-
-rl.on('close', () => {
-  console.log('This important software is now closing');
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
