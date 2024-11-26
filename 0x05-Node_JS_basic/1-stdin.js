@@ -1,7 +1,8 @@
 #!/usr/bin/node
 /**
  * program that:
- * should display the message Welcome to Holberton School, what is your name? (followed by a new line)
+ * should display the message Welcome to Holberton School,
+ * what is your name? (followed by a new line)
  * The user should be able to input their name on a new line
  * The program should display Your name is: INPUT
  */
