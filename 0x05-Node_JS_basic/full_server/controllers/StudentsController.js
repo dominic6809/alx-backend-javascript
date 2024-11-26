@@ -3,8 +3,8 @@ import readDatabase from '../utils';
 /**
  * StudentsController handles the student-related routes.
  */
-  
-  const VALID_MAJORS = ['CS', 'SWE'];
+
+const VALID_MAJORS = ['CS', 'SWE'];
 
 /**
    * Renders all students sorted by their major.
