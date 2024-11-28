@@ -1,42 +1,14 @@
 {
-  "name": "unittests_in_js",
+  "name": "task_0",
   "version": "1.0.0",
-  "description": "A project for learning the basics of unittests in Node.js.",
-  "author": "Bezaleel Olakunori <bezaleeloci@gmail.com>",
-  "private": true,
-  "license": "MIT",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint",
-    "lint-all": "./node_modules/.bin/eslint [0-9]*.js",
-    "lint-fix-all": "./node_modules/.bin/eslint --fix [0-9]*.js",
-    "test": "mocha --require @babel/register --exit",
-    "test:skip": "mocha --require @babel/register --exit 7-skip.test.js",
-    "test:all": "mocha --require @babel/register --exit",
-    "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
+    "test": "mocha"
   },
-  "dependencies": {
-    "chai-http": "^4.3.0",
-    "express": "^4.17.1"
-  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "nodemon": "^2.0.2",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "chai": "^4.3.6",
-    "mocha": "^10.0.0",
-    "sinon": "^15.0.0",
-    "request": "^2.88.0"
-  },
-  "repository": {
-    "type": "git"
-  },
-  "engines": {
-    "node": "16.x",
-    "npm": "8.x",
-    "yarn": "1.x"
+    "mocha": "^10.8.2"
   }
 }
