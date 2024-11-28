@@ -4,8 +4,17 @@
  * @param {number} b - Second number
  * @returns {number} - The sum of rounded a and b
  */
-function calculateNumber(a, b) {
-  return Math.round(a) + Math.round(b);
-}
+const calculateNumber = (type, a, b) => {
+    if (type === 'SUM') {
+      return Math.round(a) + Math.round(b);
+    }
+    if (type === 'SUBTRACT') {
+      return Math.round(a) - Math.round(b);
+    }
+    if (type === 'DIVIDE') {
+      return Math.round(b) === 0 ? 'Error' : Math.round(a) / Math.round(b);
+    }
+    return 0;
+  };
 
-module.exports = calculateNumber;
+  module.exports = calculateNumber;
