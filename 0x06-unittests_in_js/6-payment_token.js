@@ -3,15 +3,10 @@
  * @param {boolean} success - Whether the API call is successful or not
  * @returns {Promise} - A promise that resolves with a response if successful
  */
-function getPaymentTokenFromAPI(success) {
-  return new Promise((resolve, reject) => {
+const getPaymentTokenFromAPI = (success) => new Promise((resolve, _reject) => {
     if (success) {
-      resolve({ data: 'Successful response from the API' });
-    } else {
-      // Reject the promise if not successful (no response)
-      reject(new Error('API call failed'));
+      resolve({data: 'Successful response from the API'});
     }
   });
-}
 
-module.exports = getPaymentTokenFromAPI;
+  module.exports = getPaymentTokenFromAPI;
